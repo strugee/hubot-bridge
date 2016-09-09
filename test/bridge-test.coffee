@@ -1,5 +1,3 @@
-process.env.HUBOT_BRIDGE_USER = 'bridge-user'
-
 Helper = require('hubot-test-helper')
 chai = require 'chai'
 
@@ -9,6 +7,8 @@ helper = new Helper('./src')
 
 describe 'bridge', ->
   beforeEach ->
+    process.env.HUBOT_BRIDGE_USER = 'bridge-user'
+
     @room = helper.createRoom(httpd: false)
 
   it 'responds to hear test', ->
