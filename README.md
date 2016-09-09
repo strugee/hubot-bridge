@@ -1,14 +1,15 @@
 # hubot-bridge
 
-Accept Hubot commands that come over a bridge to another chatroom
+Accept Hubot commands that come over a bridge to another
+chatroom. Assumes bridge messages are in the form:
 
-See [`src/bridge.coffee`](src/bridge.coffee) for full documentation.
+> [<username>] <message>
 
 ## Installation
 
-In hubot project repo, run:
+In you Hubot project repo, run:
 
-`npm install hubot-bridge --save`
+`npm install --save hubot-bridge`
 
 Then add **hubot-bridge** to your `external-scripts.json`:
 
@@ -18,13 +19,13 @@ Then add **hubot-bridge** to your `external-scripts.json`:
 ]
 ```
 
-## Sample Interaction
+Lastly, configure the username that the bridge user uses by setting
+`HUBOT_BRIDGE_USER` in the environment your Hubot runs in.
 
-```
-user1>> hubot hello
-hubot>> hello!
-```
+## License
 
-## NPM Module
+LGPL 3.0+
 
-https://www.npmjs.com/package/hubot-bridge
+## Author
+
+Alex Jordan <alex@strugee.net>
