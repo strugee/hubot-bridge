@@ -1,27 +1,40 @@
+process.env.HUBOT_BRIDGE_USER = 'bridge-user'
+
 Helper = require('hubot-test-helper')
 chai = require 'chai'
 
 expect = chai.expect
 
-helper = new Helper('../src/bridge.coffee')
+helper = new Helper('./src')
 
 describe 'bridge', ->
   beforeEach ->
-    @room = helper.createRoom()
+    @room = helper.createRoom(httpd: false)
 
-  afterEach ->
-    @room.destroy()
-
-  it 'responds to hello', ->
-    @room.user.say('alice', '@hubot hello').then =>
+  it 'responds to hear test', ->
+    @room.user.say('alice', 'hear test').then =>
       expect(@room.messages).to.eql [
-        ['alice', '@hubot hello']
-        ['hubot', '@alice hello!']
+        ['alice', 'hear test']
+        ['hubot', '@alice hear response']
       ]
 
-  it 'hears orly', ->
-    @room.user.say('bob', 'just wanted to say orly').then =>
+  it 'responds to ping', ->
+    @room.user.say('bob', '@hubot ping').then =>
       expect(@room.messages).to.eql [
-        ['bob', 'just wanted to say orly']
-        ['hubot', 'yarly']
+        ['bob', '@hubot ping']
+        ['hubot', '@bob PONG']
+      ]
+
+  it 'responds to hear test coming through the bridge', ->
+    @room.user.say('bridge-user', '[charlie] hear test').then =>
+      expect(@room.messages).to.eql [
+        ['bridge-user', '[charlie] hear test']
+        ['hubot', '@charlie hear response']
+      ]
+
+  it 'responds to ping coming through the bridge', ->
+    @room.user.say('bridge-user', '[david] @hubot ping').then =>
+      expect(@room.messages).to.eql [
+        ['bridge-user', '[david] @hubot ping']
+        ['hubot', '@david PONG']
       ]
