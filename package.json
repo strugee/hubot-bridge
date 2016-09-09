@@ -1,7 +1,7 @@
 {
   "name": "hubot-bridge",
   "description": "Accept Hubot commands that come over a bridge to another chatroom",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Alex Jordan <alex@strugee.net>",
   "license": "LGPL-3.0+",
   "keywords": "hubot, hubot-scripts, bridge",
