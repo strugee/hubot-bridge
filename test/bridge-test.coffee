@@ -38,3 +38,6 @@ describe 'bridge', ->
 				['bridge-user', '[david] @hubot ping']
 				['hubot', '@david PONG']
 			]
+
+	# TODO: test if an error is logged when HUBOT_BRIDGE_USER isn't defined
+	# See mtsmfm/hubot-test-helper#37
