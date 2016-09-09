@@ -1,15 +1,15 @@
 # Description
-#   Accept Hubot commands that come over a bridge to another chatroom
+#	 Accept Hubot commands that come over a bridge to another chatroom
 #
 # Configuration:
-#   HUBOT_BRIDGE_USER
+#	 HUBOT_BRIDGE_USER
 #
 # Notes:
-#   Assumes messages come over the bridge in the following format:
-#   `[<user>] <message>`
+#	 Assumes messages come over the bridge in the following format:
+#	 `[<user>] <message>`
 #
 # Author:
-#   Alex Jordan <alex@strugee.net>
+#	 Alex Jordan <alex@strugee.net>
 
 # Not inline for perf
 bridgeRegexp = /\[(.*)\] (.*)/

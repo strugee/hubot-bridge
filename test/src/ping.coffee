@@ -1,5 +1,5 @@
 # Description
-#   Some bogus commands that we need available in the test environment to exercise the middleware
+#	 Some bogus commands that we need available in the test environment to exercise the middleware
 
 module.exports = (robot) ->
 
