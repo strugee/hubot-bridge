@@ -2,7 +2,7 @@
 #   Accept Hubot commands that come over a bridge to another chatroom
 #
 # Configuration:
-#   LIST_OF_ENV_VARS_TO_SET
+#   HUBOT_BRIDGE_USER
 #
 # Notes:
 #   Assumes messages come over the bridge in the following format:
@@ -16,8 +16,11 @@ bridgeRegexp = /\[(.*)\] (.*)/
 
 module.exports = (robot) ->
 
+	if not process.env.HUBOT_BRIDGE_USER
+		robot.logger.error "HUBOT_BRIDGE_USER is not defined; try: export HUBOT_BRIDGE_USER='bridge-username'"
+
 	robot.receiveMiddleware (context, next, done) ->
-		if context.response.message.user.name is 'xmpp-pump'
+		if context.response.message.user.name is process.env.HUBOT_BRIDGE_USER
 			result = bridgeRegexp.exec context.response.message.text
 
 			if result
