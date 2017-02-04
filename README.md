@@ -1,5 +1,7 @@
 # hubot-bridge
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/strugee/hubot-bridge.svg)](https://greenkeeper.io/)
+
 Accept Hubot commands that come over a bridge to another
 chatroom. Assumes bridge messages are in the form:
 
