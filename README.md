@@ -1,5 +1,7 @@
 # hubot-bridge
 
+[![Build Status](https://travis-ci.org/strugee/hubot-bridge.svg?branch=master)](https://travis-ci.org/strugee/hubot-bridge)
+[![Coverage Status](https://coveralls.io/repos/github/strugee/hubot-bridge/badge.svg?branch=master)](https://coveralls.io/github/strugee/hubot-bridge?branch=master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/strugee/hubot-bridge.svg)](https://greenkeeper.io/)
 
 Accept Hubot commands that come over a bridge to another
