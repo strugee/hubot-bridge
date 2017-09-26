@@ -5,7 +5,7 @@
 Accept Hubot commands that come over a bridge to another
 chatroom. Assumes bridge messages are in the form:
 
-> [<username>] <message>
+> [\<username\>] \<message\>
 
 ## Installation
 
