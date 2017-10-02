@@ -9,7 +9,7 @@
 #	 `[<user>] <message>`
 #
 # Author:
-#	 Alex Jordan <alex@strugee.net>
+#	 AJ Jordan <alex@strugee.net>
 
 # Not inline for perf
 bridgeRegexp = /\[(.*)\] (.*)/
