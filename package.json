@@ -35,6 +35,6 @@
   },
   "main": "index.coffee",
   "scripts": {
-    "test": "nyc -r lcov grunt test"
+    "test": "nyc -r text -r lcov grunt test"
   }
 }
