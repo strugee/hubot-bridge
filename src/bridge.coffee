@@ -16,6 +16,9 @@ bridgeRegexp = /\[(.*)\] (.*)/
 
 module.exports = (robot) ->
 
+	###
+	istanbul ignore if
+	###
 	if not process.env.HUBOT_BRIDGE_USER
 		robot.logger.error "HUBOT_BRIDGE_USER is not defined; try: export HUBOT_BRIDGE_USER='bridge-username'"
 
@@ -23,10 +26,12 @@ module.exports = (robot) ->
 		if context.response.message.user.name is process.env.HUBOT_BRIDGE_USER
 			result = bridgeRegexp.exec context.response.message.text
 
+			###
+			istanbul ignore else
+			###
+			# TODO: handle not having a result
 			if result
 				context.response.message.user.name = result[1]
 				context.response.message.text = result[2]
-			else
-				# TODO: handle this
 
 		next(done)
