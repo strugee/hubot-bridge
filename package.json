@@ -36,5 +36,14 @@
   "main": "index.coffee",
   "scripts": {
     "test": "nyc -r text -r lcov grunt test"
+  },
+  "nyc": {
+    "extension": [
+      ".coffee"
+    ],
+    "exclude": [
+      "Gruntfile.js",
+      "test"
+    ]
   }
 }
